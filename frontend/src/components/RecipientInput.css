@@ -1,0 +1,76 @@
+.recipient-field {
+  margin-bottom: 1.25rem;
+}
+
+.recipient-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #3c4440;
+}
+
+.recipient-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid #d6d1c4;
+  border-radius: 8px;
+  background: #fffdf9;
+  min-height: 48px;
+}
+
+.recipient-box:focus-within {
+  border-color: #146c53;
+  box-shadow: 0 0 0 3px rgba(20, 108, 83, 0.12);
+}
+
+.recipient-box-error {
+  border-color: #c2493f;
+}
+
+.recipient-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #e4f2ec;
+  color: #146c53;
+  border-radius: 999px;
+  padding: 0.3rem 0.4rem 0.3rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.recipient-chip button {
+  background: none;
+  border: none;
+  color: #146c53;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.2rem;
+}
+
+.recipient-box input {
+  flex: 1;
+  min-width: 160px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.92rem;
+  padding: 0.35rem 0.2rem;
+  color: #1c2321;
+}
+
+.recipient-message {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  color: #c2493f;
+}
+
+.recipient-hint {
+  margin: 0.4rem 0 0;
+  font-size: 0.78rem;
+  color: #8a9189;
+}

@@ -1,0 +1,54 @@
+.status-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.status-success {
+  background: #e4f2ec;
+  color: #146c53;
+  border: 1px solid #bfe2d2;
+}
+
+.status-success .status-icon {
+  background: #146c53;
+  color: #fff;
+}
+
+.status-warning {
+  background: #fbf3d9;
+  color: #8a6d1a;
+  border: 1px solid #ecdca0;
+}
+
+.status-warning .status-icon {
+  background: #b98d1f;
+  color: #fff;
+}
+
+.status-error {
+  background: #fbe9e7;
+  color: #a2352a;
+  border: 1px solid #f0c6bf;
+}
+
+.status-error .status-icon {
+  background: #c2493f;
+  color: #fff;
+}
