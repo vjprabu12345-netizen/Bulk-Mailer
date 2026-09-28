@@ -80,6 +80,9 @@ export async function sendBulkMail(req, res) {
         : status === "partial"
         ? `Sent to ${recipients.length - failedRecipients.length} of ${recipients.length} recipient(s). Some failed.`
         : "Delivery failed for every recipient.",
+    ...(status === "failed" && {
+      error: "No emails were delivered. Check SMTP settings and network access to the mail server; Gmail requires an App Password.",
+    }),
     record,
   });
 }

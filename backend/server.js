@@ -27,8 +27,12 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Something went wrong on the server." });
 });
 
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Bulk mail API running on http://localhost:${PORT}`);
+if (process.env.VERCEL !== "1") {
+  connectDB().then(() => {
+    app.listen(PORT, () => {
+      console.log(`Bulk mail API running on http://localhost:${PORT}`);
+    });
   });
-});
+}
+
+export default app;

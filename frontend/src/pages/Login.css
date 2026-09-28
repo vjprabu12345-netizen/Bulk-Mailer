@@ -3,7 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f6f4ef;
+  background-color: #f6f4ef;
+  background-image:
+    linear-gradient(rgba(20, 108, 83, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 108, 83, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
   padding: 1.5rem;
 }
 
@@ -15,6 +19,18 @@
   border-radius: 12px;
   padding: 2.25rem 2rem;
   box-shadow: 0 12px 30px rgba(28, 35, 33, 0.06);
+  animation: login-card-enter 650ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+@keyframes login-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .login-eyebrow {
@@ -40,6 +56,16 @@
   background: #fbe9e7;
   border: 1px solid #f0c6bf;
   color: #a2352a;
+  border-radius: 7px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.85rem;
+  margin: 0 0 1.1rem;
+}
+
+.login-status-message {
+  background: #eaf4ef;
+  border: 1px solid #c9e2d5;
+  color: #145b43;
   border-radius: 7px;
   padding: 0.65rem 0.85rem;
   font-size: 0.85rem;
@@ -86,13 +112,37 @@
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
 }
 
 .login-card button:hover:not(:disabled) {
   background: #0f5943;
+  transform: translateY(-1px);
 }
 
 .login-card button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.login-card .login-text-button {
+  margin-top: 0.9rem;
+  padding: 0.25rem;
+  background: transparent;
+  color: #146c53;
+  font-size: 0.85rem;
+}
+
+.login-card .login-text-button:hover:not(:disabled) {
+  background: transparent;
+  color: #0f5943;
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-card,
+  .login-card button {
+    animation: none;
+    transition: none;
+  }
 }

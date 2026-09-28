@@ -31,6 +31,23 @@ npm run dev
 Runs on `http://localhost:5173`. `/api/*` calls are proxied to the backend
 (see `vite.config.js`), so nothing needs a hardcoded host.
 
+## Deploy on Vercel
+
+Deploy this repository as two Vercel projects:
+
+1. Create a backend project with the project root set to `backend`. Add the
+  `MONGO_URI`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `JWT_SECRET`, `SMTP_HOST`,
+  `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, and `SMTP_FROM` environment variables
+  in Vercel. Use a hosted MongoDB URI; `127.0.0.1` will not work after deploy.
+  The API is available under `/api/*` on the backend deployment URL.
+2. Create a frontend project with the project root set to `frontend`. Set
+  `VITE_API_URL` to the backend deployment URL ending in `/api`, for example
+  `https://your-backend.vercel.app/api`, then deploy.
+
+The frontend uses the Vite proxy locally and `VITE_API_URL` on Vercel. Keep
+MongoDB and SMTP credentials in the backend project's environment variables;
+do not add them to the frontend.
+
 ## Admin login
 
 Whatever you set in the backend's `.env`:
