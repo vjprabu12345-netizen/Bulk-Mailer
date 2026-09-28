@@ -48,6 +48,14 @@ The frontend uses the Vite proxy locally and `VITE_API_URL` on Vercel. Keep
 MongoDB and SMTP credentials in the backend project's environment variables;
 do not add them to the frontend.
 
+## Deploy the backend on Render
+
+Use **New + > Blueprint** in Render and select this GitHub repository. Render
+will read `render.yaml` and create the backend web service. Enter the listed
+environment variables when prompted. `MONGO_URI` must point to a hosted MongoDB
+instance that permits Render connections. After deployment, set the frontend's
+`VITE_API_URL` to `https://<render-service>.onrender.com/api` and redeploy it.
+
 ## Admin login
 
 Whatever you set in the backend's `.env`:
