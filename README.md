@@ -14,6 +14,7 @@ cp .env.example .env
 npm start
 ```
 Runs on `http://localhost:5000`.
+Health check: `http://localhost:5000/api/health` (returns `{"status":"ok"}`).
 
 **SMTP note:** for real sending, a Gmail account needs an
 [app password](https://myaccount.google.com/apppasswords) (not your normal
